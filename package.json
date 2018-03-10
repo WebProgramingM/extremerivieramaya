@@ -1,0 +1,15 @@
+{
+  "name": "springbreak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/SpringBreak"
+  },
+  "author": "",
+  "license": "ISC"
+}

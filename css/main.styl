@@ -1,0 +1,538 @@
+@import 'init.css';
+@import 'nib'
+@import 'nib/gradients'
+
+// @ media queries
+
+$upsm = "only screen and (min-width: 576px)"
+$upmd = "only screen and (min-width: 768px)"
+$uplg = "only screen and (min-width: 992px)"
+$upxl = "only screen and (min-width: 1200px)"
+$xs = "only screen and (max-width: 575px)"
+$sm = "only screen and (min-width: 576px) and (max-width: 767px)"
+$md = "only screen and (min-width: 768px) and (max-width: 991px)"
+$lg = "only screen and (min-width: 992px) and (max-width: 1199px)"
+$xl = "only screen and (min-width: 1200px)"
+
+@font-face
+	font-family: "Mont Bold"
+	src: url(../fonts/Mont-Bold.ttf) format("truetype")
+@font-face
+	font-family: "Mont Black"
+	src: url(../fonts/Mont-Black.ttf) format("truetype")
+@font-face
+	font-family: "Mont Heavy"
+	src: url(../fonts/Mont-Heavy.ttf) format("truetype")
+@font-face
+	font-family: "Mont Regular"
+	src: url(../fonts/Mont-Regular.ttf) format("truetype")
+@font-face
+	font-family: "Mont SemiBold"
+	src: url(../fonts/Mont-SemiBold.ttf) format("truetype")
+$cope = rgba(254, 193, 47 ,1);
+$color1 = rgba(58, 206, 22 ,1);
+$cope2 = rgba(150,82,18,1)
+$balckmaya= rgba(42,42,42,.6)
+$white=rgba(255,255,255,1)
+$copelight = rgba(150,82,18,.8)
+body
+	background-color: black
+	color: white
+	overflow-x hidden !important
+footer
+	position relative
+	bottom: 0
+	color: white
+	background url('/img/fotter.png')
+	background-repeat: no-repeat
+	background-size: 100% 70%
+	background-position: center bottom
+	height 140px 
+	@media $upmd
+		position fixed
+		left: 0
+		bottom: 0
+		width: 100%
+#home
+	background: url(../img/banner1.png)
+	background-size cover
+	background-repeat: no-repeat
+	background-position: center bottom 
+	height: 100vh!important
+	h2
+		font-family: "Mont Black"
+		font-size: 37px
+		margin-bottom: -7px
+		text-shadow: 2px 2px 8px #000000
+	h3
+		font-family: "Mont Black"
+		font-size: 45px
+		margin-bottom: -7px
+		text-shadow: 2px 2px 8px #000000
+	h4
+		font-family: "Mont Black"
+		font-size: 64px
+		text-shadow: 2px 2px 8px #000000
+	.btn
+		background-color: #3ACE16
+		width: 80%
+		padding: 12px
+		border-radius: 50px	
+		color: white!important
+		box-shadow: 2px 2px 10px rgba(0,0,0,.8);
+#scene
+	height 100vh
+	position: absolute
+	.calendario
+		min-width 65%
+		height auto
+#tours
+	h2
+		font-family: "Mont Bold"
+		font-size: 31px
+	p
+		font-family: "Mont Regular"
+		font-size: 14px
+	.btn
+		background-color: $color1
+		width: 314px
+		padding: 12px
+		border-radius: 50px
+		color white
+		text-decoration none	
+#tours2
+	background-image: url('../img/fondo.png')
+	background: rgba(0, 0, 0, 0.4);
+	background-size: cover
+	background-position: center center
+	padding: 80px 0
+	
+#contact
+	h2
+		font-family: "Mont Bold"
+		font-size: 31px
+		color #FFA939
+	h3
+		font-family: "Mont Regular"
+		font-size: 22px
+	p
+		font-family: "Mont Regular"
+		font-size: 14px
+	.btn
+		background-color: $color1
+		border-radius: 50px
+		color white
+		text-decoration none
+	.input-field 
+		padding: 25px;
+		display: block;
+		border: none;
+		border-bottom: 1px solid #ccc;
+		width: 100%;	
+		&:focus
+			outline none	
+	.textarea-field
+		padding: 25px;
+		display: block;
+		border: none;
+		border-bottom: 1px solid #ccc;
+		width: 100%;	
+		&:focus
+			outline none	
+.navbar 
+	background-size: 100% 90%
+	background url('/img/nav-bkg.png')
+	background-repeat: no-repeat
+	@media $uplg
+		background-size: 100% 70%
+	.nav-link
+		font-family: "Mont SemiBold"
+		font-size: 16px
+		color: $white
+		margin-top -40px
+	.navbar-toggler
+		&:focus
+			outline none
+	&.full
+		height 100% 
+		width 100%
+		position fixed /* Stay in place */
+		z-index 1 /* Sit on top */
+		left 0
+		top 0
+		background $copelight !important
+		overflow-y hidden /* Disable horizontal scroll */
+		transition 0.5s
+		.navbar-brand
+			display none
+		button
+			position absolute
+			top 20px
+			right 15px
+			font-size 60px
+			@media $xs
+				font-size 30px
+				top 15px
+				right 25px
+		.nav-link
+			font-size 2em
+			margin-top 20px
+			color $white !important
+			@media $md
+				font-size 3em	
+#menuanim
+	width 50px
+	height 40px
+	position relative
+	margin 0px 
+	transform rotate(0deg)
+	transition .5s ease-in-out
+	cursor pointer
+	span
+		display block
+		position absolute
+		height 6px
+		width 100%
+		background-color: $white
+		opacity 1
+		left 0
+		transform rotate(0deg)
+		transition .25s ease-in-out
+		&:nth-child(1)
+			top 0
+		&:nth-child(2)
+			top 20px
+		&:nth-child(3)
+			top 20px
+		&:nth-child(4)
+			top 40px
+	&.open
+		span
+			background $white
+			&:nth-child(1)
+				top 18px
+				width 0%
+				left 50%
+			&:nth-child(2)
+				transform rotate(50deg)
+			&:nth-child(3)
+				transform rotate(-50deg)
+			&:nth-child(4)
+				top 18px
+				width 0%
+				left 50%
+#head
+	padding-top: 54vh
+.expanded
+	height 50% !important
+	opacity 1
+	transition 0.6s ease
+	.inner
+		height  20% !important
+		transition 0.5s ease-out
+		&.mezcal
+			.inner
+				background-color rgba(254, 213, 0, 0.87)
+			h3
+				color black !important
+			img
+				filter: invert(100%)
+			.button
+				border-color black
+				color black
+				background-color rgba(0, 0, 0, 0)
+				
+
+
+.box-el
+	max-width: 100%
+	margin: auto
+.box1
+	height: 300px
+	background: orange;
+	width: 33.3%;
+	margin: 0em .5em;
+	background-image: url("/img/wakeboarding.png")
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	&:hover
+		.the-content-box
+			transform: translateY(0%);
+			background: rgba(black, 0.8);
+			h1
+				opacity 0
+			
+			p
+				opacity: 1;
+				transition: all 400ms ease;
+				transform: translateY(00%);
+				transition-delay: 600ms;
+			
+			a
+				opacity: 1;
+				transform: translateX(0%);
+				transition-delay: 900ms;
+.box2
+	height: 300px
+	background: orange;
+	width: 33.3%;
+	margin: 0em .5em;
+	background-image: url("/img/zipline.png")
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	&:hover
+		.the-content-box
+			transform: translateY(0%);
+			background: rgba(black, 0.8);
+			h1
+				opacity 0
+			
+			p
+				opacity: 1;
+				transition: all 400ms ease;
+				transform: translateY(00%);
+				transition-delay: 600ms;
+			
+			a
+				opacity: 1;
+				transform: translateX(0%);
+				transition-delay: 900ms;
+
+.box3
+	height: 300px
+	background: orange;
+	width: 33.3%;
+	margin: 0em .5em;
+	background-image: url("/img/kitesurfing.png")
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	&:hover
+		.the-content-box
+			transform: translateY(0%);
+			background: rgba(black, 0.8);
+			h1
+				opacity 0
+			
+			p
+				opacity: 1;
+				transition: all 400ms ease;
+				transform: translateY(00%);
+				transition-delay: 600ms;
+			
+			a
+				opacity: 1;
+				transform: translateX(0%);
+				transition-delay: 900ms;
+				
+.box4
+	height: 300px
+	background: orange;
+	width: 33.3%;
+	margin: 0em .5em;
+	background-image: url("/img/sportfishing.png")
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	&:hover
+		.the-content-box
+			transform: translateY(0%);
+			background: rgba(black, 0.8);
+			h1
+				opacity 0
+			
+			p
+				opacity: 1;
+				transition: all 400ms ease;
+				transform: translateY(00%);
+				transition-delay: 600ms;
+			
+			a
+				opacity: 1;
+				transform: translateX(0%);
+				transition-delay: 900ms;
+.box5
+	height: 300px
+	background: orange;
+	width: 33.3%;
+	margin: 0em .5em;
+	background-image: url("/img/woodward.png")
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	&:hover
+		.the-content-box
+			transform: translateY(0%);
+			background: rgba(black, 0.8);
+			h1
+				opacity 0
+			
+			p
+				opacity: 1;
+				transition: all 400ms ease;
+				transform: translateY(00%);
+				transition-delay: 600ms;
+			
+			a
+				opacity: 1;
+				transform: translateX(0%);
+				transition-delay: 900ms;
+				
+.box6
+	height: 300px
+	background: orange;
+	width: 33.3%;
+	margin: 0em .5em;
+	background-image: url("/img/bungeejump.png")
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	&:hover
+		.the-content-box
+			transform: translateY(0%);
+			background: $balckmaya
+			h1
+				opacity 0
+			
+			p
+				opacity: 1;
+				transition: all 400ms ease;
+				transform: translateY(00%);
+				transition-delay: 600ms;
+			
+			a
+				opacity: 1;
+				transform: translateX(0%);
+				transition-delay: 900ms;
+.box-inner
+	position: absolute;
+	height: 80%;
+	width: 100%;
+	left 0
+	top: 0
+	overflow: hidden;
+	
+.the-content-box
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background: $balckmaya
+	color: white;
+	transform: translateY(70%);
+	transition: all 600ms ease;
+	h1
+		padding: 0.2em 0em 0em 0em;
+		margin: 0;
+		font-family: helvetica;
+		transition: all 400ms ease;
+	
+	hr
+		background: #4A89CD;
+		height: 3px;
+		border: none;
+		margin: 1em 0em 0em 0em;
+		width: 0;
+		transition: all 400ms ease;
+	
+	p
+		letter-spacing: 1px;
+		opacity: 0;
+		font-family: arial !important;
+		transition: all 900ms ease;
+		transform: translateY(40%);
+		font-weight: lighter;
+	
+	a
+		display: inline-block;
+		width 300px
+		height 60px
+		line-height 60px
+		text-align center
+		border 1px solid white
+		border-radius 50px
+		color: white !important;
+		text-decoration: none;
+		font-weight: bolder;
+		position: relative;
+		transition: all 600ms ease;
+		opacity: 0;
+		transform: translateX(20%);
+		&:hover
+			background: #1B324B;
+	
+.content-box-inner
+	padding: 0em 1em;
+
+.box-footer
+	position: absolute;
+	height: 80%;
+	width: 100%;
+	left 0
+	top: 20%;
+	overflow: hidden;
+.the-content-footer
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color $cope
+	color: white;
+	transform: translateY(75%);
+	transition: all 600ms ease;
+	// z-index 1
+.the-content-footer2
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color $cope2
+	color: white;
+	transform: translateY(75%);
+	transition: all 600ms ease;
+		
+.content-box-footer
+	font-family: "Mont SemiBold"
+	padding: 1em 1em;
+
+.green
+	color $color1 !important
+
+
+.img-fluid-mov
+	@media $sm
+		width 100%
+		height auto
+	@media $xs
+		width 100%
+		height auto
+
+.video
+	position absolute
+	left 0
+	right 0
+	top 50%
+	text-align center
+	img
+		width 80px
+		margin-top -140px
+		@media $uplg
+			width 120px
+			margin-top -120px
+			transition 0.2s ease-in-out
+			&:hover
+				transform scale(1.2)
+				transition 0.2s ease-in-out
+			&:focus
+				outline none !important
+				
+
+.space
+	margin-top 10%
+.fotter
+	margin-top: 7%
+	p
+		display: block
+		margin-bottom: 0
+		padding-top: 12px
+.contact_results
+	color: white
