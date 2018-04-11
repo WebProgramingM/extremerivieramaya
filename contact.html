@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Xtreme Riviera Maya</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon.png">
+	
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+		
+	
+		
+		
+		<!-- Place favicon.ico in the root directory -->
+		
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.min.css">
+		<link rel="stylesheet" href="dist/aos.css" />
+		<meta property="og:image" content="http://extremerivieramaya.com/icon.png">
+		<meta name="theme-color" content="#ffffff">
+		<meta property="og:title" content="Extreme Maya">
+		<meta property="og:type" content="article">
+		<meta property="og:url" content="http://extremerivieramaya.com/">
+		<meta property="og:image:type" content="image/png">
+		<meta property="og:image:width" content="600">
+		<meta property="og:image:height" content="600">
+		<meta name="author" content="Jose Gonzalez and Zammis Antonio">
+		<!-- <meta name="keywords" content="spring break cancun 2018 dates, package spring break cancun 2018, dates spring break 2018 cancun, when is the spring break 2018,  spring break dates 2018, spring breakers, when is easter 2018, spring break this year, when does spring break start "> -->
+	</head>
+	<body>
+	
+	<section class="container py-5 my-5 " id="contact">					
+			<div class="col-12 col-lg-6">
+				<h3  class="mb-5 text-center">Leave us a message and becomea<br> partner!</h3>
+				<!-- <section class="contact  shadow" id="contact_form">
+					<div class="row">
+						<div class="col-12">
+							<div id="contact_results"></div>
+						</div>
+						<div class="col-md-12 col-sm-12 mb-2">
+							<input type="text" name="name1" id="name" required="true" class="input-field"  placeholder="Nombre:">
+						</div>
+						<div class="col-md-4 col-sm-12 my-2">
+							<input type="tel" name="phone2" id="phone" required="true" class="input-field" placeholder="Telefono:">
+						</div>
+						<div class="col-md-8 col-sm-12 my-2">
+							<input type="email" name="email1" id="email" required="true" class="input-field" placeholder="Email:">
+						</div>
+
+						<div class="col-12 my-2">
+							<textarea name="message1" id="message" class="textarea-field" required="true" rows="6" placeholder="Comments"></textarea>
+						</div>
+						<div class="col-12 d-flex justify-content-end">
+							<input id="submit_btn" class="btn" type="submit" value="Send">
+						</div>
+					</div>
+				</section> -->
+				<section class="contact  shadow" id="contact_form">
+					<div class="row">
+						<div class="col-12">
+							<div id="contact_results"></div>
+						</div>
+						<div class="col-md-12 col-sm-12 pb-2">
+							<input type="text" name="name" id="name" required="true" class="input-field"  placeholder="Name">
+						</div>
+						<div class="col-md-4 col-sm-12 py-2">
+							<input type="tel" name="phone2" id="phone" required="true" class="input-field" placeholder="Phone">
+						</div>
+						<div class="col-md-8 col-sm-12 py-2">
+							<input type="email" name="email" id="email" required="true" class="input-field" placeholder="email">
+						</div>
+
+						<div class="col-12 py-2">
+							<textarea name="message" id="message" class="textarea-field" required="true" rows="6" placeholder="Mensaje"></textarea>
+						</div>
+						<div class="col-4 ml-auto">
+							<input id="submit_btn" class="btn btn-submit" type="submit" value="send">
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>		
+	</section>	
+
+		<!--  <script data-prepros-origin-host="192.168.1.83" src="http://192.168.1.83:5566/__prepros-server__/prepros.js"> </script> -->
+		<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+		<script src="js/vendor/bootstrap.bundle.min.js"></script>
+		<!-- <script src="/dist/aos.js"></script> -->
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+		<script>  
+$(document).ready(function() {
+
+	$("#submit_btn").click(function() {
+		var proceed = true;
+		//simple validation at client's end
+		//loop through each field and we simply change border color to red for invalid fields
+		$("#contact_form input[required=true], #contact_form textarea[required=true]").each(function() {
+			$(this).css('border-color', '');
+			if (!$.trim($(this).val())) { //if this field is empty
+				$(this).css('border-color', 'red'); //change border color to red
+				proceed = false; //set do not proceed flag
+			}
+			//check invalid email
+			var email_reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+			if ($(this).attr("type") == "email" && !email_reg.test($.trim($(this).val()))) {
+				$(this).css('border-color', 'red'); //change border color to red
+				proceed = false; //set do not proceed flag
+			}
+		});
+		if (proceed) //everything looks good! proceed...
+		{
+		//get input field values data to be sent to server
+			post_data = {
+				'user_name': $('input[name=name]').val(),
+				'user_email': $('input[name=email]').val(),
+				'phone_number': $('input[name=phone2]').val(),
+				'msg': $('textarea[name=message]').val(),
+
+			};
+		//Ajax post data to server
+			$.post('php/contact_test.php', post_data, function(response) {
+				if (response.type == 'error') { //load json data from server and output message
+					output = '<div class="error">' + response.text + '</div>';
+
+				} else {
+
+					output = '<div class="success">' + response.text + '</div>';
+					$("#contact_form input[required=true], #contact_form textarea[required=true]").val('');
+                        				$("#contact_form #contact_body").slideUp(); //hide form after success
+					document.getElementById('contact_results').innerHTML=text;
+					document.getElementById("name").value="";
+					document.getElementById("email").value="";
+					document.getElementById("phone").value="";
+					document.getElementById("message").value="";
+
+				}
+
+				$("#contact_form #contact_results").hide().html(output).slideDown();
+			}, 'json');
+		}
+	});
+
+	//reset previously set border colors and hide all message on .keyup()
+	$("#contact_form  input[required=true], #contact_form textarea[required=true]").keyup(function() {
+	$(this).css('border-color', '');
+	$("#result").slideUp();
+	});
+});
+</script>
+</body>
+</html>
+

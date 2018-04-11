@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario de contacto</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+    <section class="form_wrap">
+<form method="post" action="http://extremerivieramaya.com/cgi-bin/FormMail.pl" 
+accept-charset="ISO-8859-1" onsubmit="var originalCharset = document.charset; 
+document.charset = 'ISO-8859-1'; 
+window.onbeforeunload = function () {document.charset=originalCharset;};">
+        Nombre
+        <br />
+        <input name="realname" />
+        <br />
+        Correo electrónico
+        <br />
+        <input name="email" />
+        <br />
+        Mensaje
+        <br />
+        <textarea cols="40" rows="10" name="Message"></textarea>
+        <br />
+        <input type="submit" value="Enviar" />
+        <input type="hidden" name="recipient" value="email@example.com" />
+        <input type="hidden" name="subject" value="Subject" />
+        <input type="hidden" name="redirect" 
+        value="http://www.example.com/mensaje-de-envio.html" />
+        <input type="hidden" name="missing_fields_redirect" 
+        value="http://www.example.com/404.html" />
+        <input type="hidden" name="required" value="realname,email,Message" />
+</form>
+
+ <!--        <form action="enviar.php" method="post" class="form_contact">
+            <h2>Envia un mensaje</h2>
+            <div class="user_info">
+                <label for="names">Nombres *</label>
+                <input type="text" id="names" name="nombre" required>
+
+                <label for="phone">Telefono / Celular</label>
+                <input type="text" id="phone" name="telefono">
+
+                <label for="email">Correo electronico *</label>
+                <input type="text" id="email" name="correo" required>
+
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <input type="submit" value="Enviar Mensaje" id="btnSend">
+            </div>
+        </form> -->
+
+    </section>
+
+</body>
+</html>

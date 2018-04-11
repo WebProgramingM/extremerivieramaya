@@ -2,6 +2,32 @@
 @import 'nib'
 @import 'nib/gradients'
 
+body, html
+	font-family: "Mont Bold", "Mont SemiBold","Mont Heavy";
+	font-weight normal
+	letter-spacing 0.500px
+	font-size 14px
+	line-height 1.4
+	font-kerning normal
+	font-size-adjust .5
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	text-rendering geometricPrecision
+	quotes "“" "”"
+	
+	
+h1
+	font-family: "Mont Black"
+	font-weight 800	
+
+h2
+	font-family "arial", sans-serif
+	font-weight 700
+h3
+	font-family: "Mont SemiBold"
+	font-weight 700
+a
+	font-family: "Mont Heavy"
 // @ media queries
 
 $upsm = "only screen and (min-width: 576px)"
@@ -45,7 +71,7 @@ footer
 	color: white
 	background url('/img/fotter.png')
 	background-repeat: no-repeat
-	background-size: 100% 70%
+	background-size: 100% 100%
 	background-position: center bottom
 	height 140px 
 	@media $upmd
@@ -53,6 +79,7 @@ footer
 		left: 0
 		bottom: 0
 		width: 100%
+		background-size: 100% 70%
 #home
 	background: url(../img/banner1.png)
 	background-size cover
@@ -121,10 +148,12 @@ footer
 	.btn
 		background-color: $color1
 		border-radius: 50px
+		width: 214px
+		padding: 12px
 		color white
 		text-decoration none
 	.input-field 
-		padding: 25px;
+		padding: 15px;
 		display: block;
 		border: none;
 		border-bottom: 1px solid #ccc;
@@ -132,7 +161,7 @@ footer
 		&:focus
 			outline none	
 	.textarea-field
-		padding: 25px;
+		padding: 15px;
 		display: block;
 		border: none;
 		border-bottom: 1px solid #ccc;
@@ -456,7 +485,7 @@ footer
 		text-decoration: none;
 		font-weight: bolder;
 		position: relative;
-		transition: all 600ms ease;
+		transition: all 200ms ease;
 		opacity: 0;
 		transform: translateX(20%);
 		&:hover
@@ -529,10 +558,11 @@ footer
 .space
 	margin-top 10%
 .fotter
-	margin-top: 7%
-	p
-		display: block
-		margin-bottom: 0
-		padding-top: 12px
+	padding-top 3em
+	justify-content: center
+	@media $upmd
+		padding-top 0
+		justify-content: flex-end
+		    
 .contact_results
 	color: white
