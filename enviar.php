@@ -1,10 +1,10 @@
 <?php  
 
 // Llamando a los campos
-$nombre = $_POST['nombre'];
-$correo = $_POST['correo'];
-$telefono = $_POST['telefono'];
-$mensaje = $_POST['mensaje'];
+$nombre = $_POST['name1'];
+$correo = $_POST['phone2'];
+$telefono = $_POST['email1'];
+$mensaje = $_POST['message1'];
 
 // Datos para el correo
 $destinatario = "info@extremerivieramaya.com";
